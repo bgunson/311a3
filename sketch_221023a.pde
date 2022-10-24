@@ -41,8 +41,6 @@ class Orbital {
 }
 
 ArrayList<Orbital> orbitals;
-float[] rgb = {random(255), random(255), random(255)};
-float c = random(255);
 
 void setup() {
   size(640, 560, P3D);
@@ -60,8 +58,8 @@ void draw() {
   delay(10);  // helps lower cpu load
   background(255);
   translate(width / 2, height / 2); 
-  pointLight(c, c, c, 0, 0, 0);
-  pointLight(c, c, c, width/2, height/2, 100);
+  pointLight(204, 204, 204, 0, 0, 0);
+  pointLight(100, 100, 100, width/2, height/2, 100);
 
   for (Orbital o : orbitals) {
     o.draw();

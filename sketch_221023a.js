@@ -1,9 +1,5 @@
 let orbitals;
-let rgb;
-let c = 0;
 function setup(){
-    rgb = [random(255), random(255), random(255)];
-    c = random(255);
     createCanvas(640, 560, WEBGL);
     translate(-width/2, -height/2);
     noStroke();
@@ -20,8 +16,8 @@ function draw(){
     delay(10);
     background(255);
     translate(width / 2, height / 2);
-    pointLight(c, c, c, 0, 0, 0);
-    pointLight(c, c, c, width / 2, height / 2, 100);
+    pointLight(204, 204, 204, 0, 0, 0);
+    pointLight(100, 100, 100, width / 2, height / 2, 100);
     for (let P2JSi = 0; P2JSi < orbitals.length; P2JSi++){
         let o = orbitals[P2JSi];
         o.draw();
