@@ -1,6 +1,7 @@
 let orbitals;
 function setup(){
-    createCanvas(640, 560, WEBGL);
+    var canvas = createCanvas(640, 560, WEBGL);
+    canvas.parent("sketch");
     translate(-width/2, -height/2);
     noStroke();
     fill(204);

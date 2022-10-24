@@ -13,7 +13,7 @@
       height: 100%;
     }
 
-    body {
+    #sketch {
       margin: 0;
       display: flex;
 
@@ -23,11 +23,48 @@
       /* This centers our sketch vertically. */
       align-items: center;
     }
+
+    .grid {
+      display: flex;
+    }
+
+    .col {
+      flex: 1;
+    }
+
+    @media (max-width: 980px) {
+      .grid {
+        flex-direction: column;
+      }
+    }
+
+    #description {
+      color: white;
+      padding: 5px 15px;
+    }
   </style>
 </head>
 
 <body style="background-color: black;">
-  <div id='settings'></div>
+
+  <div class="grid">
+    <div class="col">
+      <div id="sketch">
+        <div id='settings'></div>
+      </div>
+    </div>
+    <div class="col">
+      <div id="description">
+        <h1>Spheres of Influence</h1>
+        <hr>
+        <h3>Assignment Description</h3>
+        <p>
+          Create a generative piece using basic shapes based on your concept of <i>time</i>.
+        </p>
+      </div>
+    </div>
+  </div>
+  <br>
 </body>
 
 </html>
