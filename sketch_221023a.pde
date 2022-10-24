@@ -14,13 +14,13 @@ class Orbital {
     posX = posY = 0;
 
     rad = maxSize;
-    dRad = -1;
+    dRad = random(-0.5, 0.5);
     
     radiusX = random((width/2) - (2*maxSize));
     radiusY = random((height/2) - (2*maxSize));
     
     theta = random(360);
-    dTheta = 0.01 + random(0.03);
+    dTheta = random(0.01, 0.03);
   }
   
   void draw() {
@@ -28,7 +28,7 @@ class Orbital {
     posX = radiusX * cos(theta);
     posY = radiusY * sin(theta);
     translate(posX, posY);
-    rad += dRad * 0.25;
+    rad += dRad;
 
     if (rad <= 0 || rad > maxSize) {
       dRad *= -1;
@@ -43,14 +43,14 @@ class Orbital {
 ArrayList<Orbital> orbitals;
 
 void setup() {
-  size(640, 560, P3D);
+  size(640, 480, P3D);
   noStroke();
   fill(204);
   
   orbitals = new ArrayList<Orbital>();
-  int numO = 3 + (int)random(10);
+  int numO = (int)random(3, 15);
   for (int i = 0; i < numO; i++) {
-    orbitals.add(new Orbital(20 + random(100)));
+    orbitals.add(new Orbital(random(20, 100)));
   }
 }
 

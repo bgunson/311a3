@@ -1,14 +1,14 @@
 let orbitals;
 function setup(){
-    var canvas = createCanvas(640, 560, WEBGL);
+    var canvas = createCanvas(640, 480, WEBGL);
     canvas.parent("sketch");
     translate(-width/2, -height/2);
     noStroke();
     fill(204);
     orbitals=new Array();
-    let numO = 3 + int(random(10));
+    let numO = int(random(3, 15));
     for(let i = 0;i < numO;i++) {
-        orbitals.push(new Orbital(20 + random(100)));
+        orbitals.push(new Orbital(random(20, 100)));
     }
 }
 
@@ -31,11 +31,11 @@ class Orbital{
         this.maxSize=size;
         this.posX=this.posY=0;
         this.rad=this.maxSize;
-        this.dRad=-1;
+        this.dRad=random(-0.5, 0.5);
         this.radiusX=random((width / 2) - (2 * this.maxSize));
         this.radiusY=random((height / 2) - (2 * this.maxSize));
         this.theta=random(360);
-        this.dTheta=0.01 + random(0.03);
+        this.dTheta=random(0.01, 0.03);
     }
 
     draw(){
@@ -43,7 +43,7 @@ class Orbital{
         this.posX=this.radiusX * cos(this.theta);
         this.posY=this.radiusY * sin(this.theta);
         translate(this.posX, this.posY);
-        this.rad+=this.dRad * 0.25;
+        this.rad+=this.dRad;
         if(this.rad <= 0 || this.rad > this.maxSize) {
             this.dRad*=-1;
         }
