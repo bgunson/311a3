@@ -31,7 +31,7 @@ class Orbital{
         this.maxSize=size;
         this.posX=this.posY=0;
         this.rad=this.maxSize;
-        this.dRad=random(-0.5, 0.5);
+        this.dRad=random(0.01, 0.3);
         this.radiusX=random((width / 2) - (2 * this.maxSize));
         this.radiusY=random((height / 2) - (2 * this.maxSize));
         this.theta=random(360);

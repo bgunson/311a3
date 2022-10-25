@@ -14,7 +14,7 @@ class Orbital {
     posX = posY = 0;
 
     rad = maxSize;
-    dRad = random(-0.5, 0.5);
+    dRad = random(0.01, 0.3);
     
     radiusX = random((width/2) - (2*maxSize));
     radiusY = random((height/2) - (2*maxSize));
