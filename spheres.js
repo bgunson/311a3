@@ -31,11 +31,11 @@ class Orbital{
         this.maxSize=size;
         this.posX=this.posY=0;
         this.rad=this.maxSize;
-        this.dRad=random(0.01, 0.3);
+        this.dRad=random(0.01, 0.25);
         this.radiusX=random((width / 2) - (2 * this.maxSize));
         this.radiusY=random((height / 2) - (2 * this.maxSize));
         this.theta=random(360);
-        this.dTheta=random(0.01, 0.03);
+        this.dTheta=random(0.01, 0.025);
     }
 
     draw(){

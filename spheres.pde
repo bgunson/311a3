@@ -14,13 +14,13 @@ class Orbital {
     posX = posY = 0;
 
     rad = maxSize;
-    dRad = random(0.01, 0.3);
+    dRad = random(0.01, 0.25);
     
     radiusX = random((width/2) - (2*maxSize));
     radiusY = random((height/2) - (2*maxSize));
     
     theta = random(360);
-    dTheta = random(0.01, 0.03);
+    dTheta = random(0.01, 0.025);
   }
   
   void draw() {
