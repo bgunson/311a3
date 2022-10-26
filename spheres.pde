@@ -5,7 +5,7 @@ class Orbital {
   float radiusX, radiusY;
   float theta;
   float rad;
-  float maxSize;
+  float minSize, maxSize;
   float dRad;
   float dTheta;
   
