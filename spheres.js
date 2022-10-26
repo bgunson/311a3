@@ -8,7 +8,7 @@ function setup(){
     orbitals=new Array();
     let numO = int(random(3, 15));
     for(let i = 0;i < numO;i++) {
-        orbitals.push(new Orbital(random(20, 100)));
+        orbitals.push(new Orbital());
     }
 }
 
@@ -26,12 +26,13 @@ function draw(){
 }
 
 class Orbital{
-    constructor(size){
+    constructor(){
         this.posY = 0;
-        this.maxSize=size;
+        this.minSize = random(5, 16);
+        this.maxSize=random(20, 100);
         this.posX=this.posY=0;
         this.rad=this.maxSize;
-        this.dRad=random(0.01, 0.25);
+        this.dRad=random(0.01, 0.15);
         this.radiusX=random((width / 2) - (2 * this.maxSize));
         this.radiusY=random((height / 2) - (2 * this.maxSize));
         this.theta=random(360);
@@ -44,7 +45,7 @@ class Orbital{
         this.posY=this.radiusY * sin(this.theta);
         translate(this.posX, this.posY);
         this.rad+=this.dRad;
-        if(this.rad <= 0 || this.rad > this.maxSize) {
+        if(this.rad <= this.minSize || this.rad > this.maxSize) {
             this.dRad*=-1;
         }
         sphere(this.rad);

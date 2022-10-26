@@ -9,12 +9,13 @@ class Orbital {
   float dRad;
   float dTheta;
   
-  Orbital(float size) {
-    maxSize = size;
+  Orbital() {
+    minSize = random(5, 16);
+    maxSize = random(20, 100);
     posX = posY = 0;
 
     rad = maxSize;
-    dRad = random(0.01, 0.25);
+    dRad = random(0.01, 0.15);
     
     radiusX = random((width/2) - (2*maxSize));
     radiusY = random((height/2) - (2*maxSize));
@@ -30,7 +31,7 @@ class Orbital {
     translate(posX, posY);
     rad += dRad;
 
-    if (rad <= 0 || rad > maxSize) {
+    if (rad <= minSize || rad > maxSize) {
       dRad *= -1;
     }
     
@@ -50,7 +51,7 @@ void setup() {
   orbitals = new ArrayList<Orbital>();
   int numO = (int)random(3, 15);
   for (int i = 0; i < numO; i++) {
-    orbitals.add(new Orbital(random(20, 100)));
+    orbitals.add(new Orbital());
   }
 }
 
